@@ -5,7 +5,31 @@ $(window).scroll(function(){
 	signatureScroll();
 });
 
-// 
+// MoveIt function
+$.fn.moveIt = function(){
+	var instances = [];
+
+	$(this).each(function(){
+		instances.push(new moveItItem($(this)));
+	});
+
+	window.addEventListener('scroll',function(){
+		var scrollTop = $(window).scrollTop();
+		instances.forEach(function(inst){
+			inst.update(scrollTop);
+		});
+	}, {passive: true});
+}
+var moveItItem = function(ev){
+	this.ev = ev;
+	this.speed = parseInt(this.ev.attr('data-scroll-speed'));
+};
+moveItItem.prototype.update = function(scrollTop){
+	this.ev.css('transform','translateY('+ -((scrollTop-2210)/(this.speed/1.2)) +'px)');
+};
+
+// 啟動contact中的動畫
+$('.wrapper .box').moveIt();
 
 // 呼叫簽名動畫
 function signatureScroll(){
