@@ -13,6 +13,36 @@ body {
   font-size: 18px;
   line-height: 24px;
 }
+body .nav {
+  width: 100%;
+  height: 59px;
+  position: fixed;
+  z-index: 3;
+  background: #eee;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.4s;
+}
+body .nav.active {
+  opacity: 1;
+}
+body .nav ul {
+  width: 410px;
+  text-align: center;
+  margin: 0 auto;
+  list-style: none;
+}
+body .nav ul li {
+  float: left;
+  display: inline-block;
+  line-height: 59px;
+}
+body .nav ul li a {
+  display: inline-block;
+  line-height: 59px;
+  padding: 0 20px;
+  color: #333;
+}
 body header {
   overflow: hidden;
   padding-bottom: 45%;
@@ -117,6 +147,10 @@ body #animator h1 {
   line-height: 1.125;
   color: white;
 }
+body #animator img {
+  margin-top: 30px;
+  width: 600px;
+}
 body #contact {
   width: 100%;
   background: #f5f5f5;
@@ -130,6 +164,40 @@ body #contact .contactBox {
 body #contact .contactBox h1 {
   font-size: 50px;
   line-height: 1.125;
+}
+body #contact .contactBox .wrapper {
+  width: 600px;
+  margin: 0 auto;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #contact .contactBox .wrapper .box {
+  float: left;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  background: #ff8330;
+  will-change: transform;
+}
+body #contact .contactBox .wrapper .box:nth-of-type(2) {
+  background: #E01B5D;
+}
+body #contact .contactBox .wrapper .box:nth-of-type(3) {
+  background: #30FFFF;
+}
+body #contact .contactBox .wrapper .box:nth-of-type(4) {
+  background: #B3FF30;
+}
+body #contact .contactBox .wrapper .box:nth-of-type(5) {
+  background: #308AFF;
+}
+body #contact .contactBox .wrapper .box:nth-of-type(6) {
+  background: #1BE059;
 }
 
 /*# sourceMappingURL=style.css.map */
